@@ -6,7 +6,7 @@ import { ConnectButton, useAccount, AccountButton } from "@web3modal/react";
 import ClientOnlyWrapper from "../components/ClientOnlyWrapper";
 
 const Home: NextPage = () => {
-  const { isConnected, address } = useAccount();
+  const { connected, address } = useAccount();
 
   return (
     <div className={styles.container}>
@@ -17,16 +17,14 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <ClientOnlyWrapper>
-          Embrace!
-          {isConnected ? (
-            <>
-              <h1>{address ? address : "none"} </h1>
-            </>
-          ) : (
-            <ConnectButton />
-          )}
-        </ClientOnlyWrapper>
+        Embrace!
+        {connected ? (
+          <>
+            <h1>{address ? address : "none"} </h1>
+          </>
+        ) : (
+          <ConnectButton />
+        )}
       </main>
 
       <footer className={styles.footer}>.</footer>
