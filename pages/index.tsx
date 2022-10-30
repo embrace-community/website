@@ -34,7 +34,9 @@ const Logo = ({
 
 const Nav = () => {
   return (
-    <div><Logo /></div>
+    <div className="w-full p-0 flex flex-row px-10 py-5 items-center">
+      <Logo />
+    </div>
     )
 
 };
@@ -50,7 +52,10 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <Nav />
+        {/* <Nav /> */}
+        <div className="w-full flex">
+
+        </div>
       </main>
 
       <footer>.</footer>
